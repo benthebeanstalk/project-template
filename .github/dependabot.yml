@@ -1,0 +1,35 @@
+version: 2
+updates:
+  # Keeps CI action versions current.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "chore"
+    groups:
+      actions:
+        patterns: ["*"]
+  # Uncomment the ecosystems your project uses. Minor and patch updates arrive in one monthly PR.
+  # Major updates stay single PRs (they can break the build). Security updates ignore the schedule.
+  # - package-ecosystem: uv
+  #   directory: /
+  #   schedule:
+  #     interval: monthly
+  #   open-pull-requests-limit: 2
+  #   commit-message:
+  #     prefix: "chore"
+  #   groups:
+  #     python-minor-patch:
+  #       update-types: ["minor", "patch"]
+  # - package-ecosystem: npm
+  #   directory: /
+  #   schedule:
+  #     interval: monthly
+  #   open-pull-requests-limit: 2
+  #   commit-message:
+  #     prefix: "chore"
+  #   groups:
+  #     npm-minor-patch:
+  #       update-types: ["minor", "patch"]
